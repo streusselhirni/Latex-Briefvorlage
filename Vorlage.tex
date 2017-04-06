@@ -1,0 +1,46 @@
+\documentclass[
+    pagenumber=botright,
+    parskip=half,
+    fontsize=12pt,
+    fromalign=center,
+    fromrule=true,
+    foldmarks=true
+    ]{scrlttr2}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+
+\setkomavar{fromname}{}
+\setkomavar{fromaddress}{}
+\setkomavar{fromphone}{}
+\setkomavar{fromemail}{}
+\setkomavar{frommobilephone}{}
+\setkomavar{location}{%
+    Telefon: \usekomavar{fromphone}\\
+    Handy: \usekomavar{frommobilephone}\\
+    E-Mail: \usekomavar{fromemail}
+}
+\newkomavar[Aktenzeichen]{aktenzeichen}
+\setkomavar{aktenzeichen}{}
+\addtoreffields{aktenzeichen}
+\newkomavar[IdNr]{idnr}
+\setkomavar{idnr}{}
+\addtoreffields{idnr}
+\setkomavar{subject}{}
+
+\begin{document}
+\begin{letter}{%
+Herrn\\
+Max Muster\\
+Beispielstraße 1\\
+12345 Testhausen}
+\opening{Sehr geehrter Herr Muster}
+
+Hier kommt der Text.
+
+\closing{Freundliche Grüße}
+
+% Anlagen
+%\encl{}
+\end{letter}
+\end{document}
