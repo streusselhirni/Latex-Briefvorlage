@@ -2,20 +2,26 @@
     pagenumber=botright,
     parskip=half,
     fontsize=12pt,
-    fromalign=center,
-    fromrule=true,
+    fromalign=right,
+    fromrule=false,
     foldmarks=true
     ]{scrlttr2}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[ngerman]{babel}
 
-\setkomavar{fromname}{}
-\setkomavar{fromaddress}{}
-\setkomavar{fromphone}{}
-\setkomavar{fromemail}{}
-\setkomavar{frommobilephone}{}
+\makeatletter
+% Set width of location field (additional information block)
+\@setplength{locwidth}{6cm}
+\makeatother
+
+\setkomavar{fromname}{Nicolas Haenni}
+\setkomavar{fromaddress}{Freiburger Str. 30 \\ 79395 Neuenburg am Rhein}
+\setkomavar{fromphone}{+49 7631 9381 260}
+\setkomavar{fromemail}{mail@nicolashaenni.me}
+\setkomavar{frommobilephone}{+49 176 301 57567}
 \setkomavar{location}{%
+	\raggedleft
     Telefon: \usekomavar{fromphone}\\
     Handy: \usekomavar{frommobilephone}\\
     E-Mail: \usekomavar{fromemail}
@@ -31,14 +37,14 @@
 \begin{document}
 \begin{letter}{%
 Herrn\\
-Max Muster\\
-Beispielstraße 1\\
+Mike Tester\\
+Teststraße 10a\\
 12345 Testhausen}
-\opening{Sehr geehrter Herr Muster}
+\opening{Lieber Mike}
 
-Hier kommt der Text.
+Hier wir versprochen.
 
-\closing{Freundliche Grüße}
+\closing{Liebe Grüße}
 
 % Anlagen
 %\encl{}
